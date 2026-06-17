@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* HSL Format - Integra International Brand Colors */
+  --background: 0 0% 100%;
+  --foreground: 236 93% 17%; /* Integra Dark Blue */
+
+  --card: 0 0% 100%;
+  --card-foreground: 236 93% 17%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 236 93% 17%;
+
+  /* Primary: Integra Dark Blue #020654 */
+  --primary: 236 93% 17%; 
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary: Integra Pale Blue #A1C9F5 */
+  --secondary: 212 83% 80%;
+  --secondary-foreground: 236 93% 17%;
+
+  --muted: 212 50% 96%;
+  --muted-foreground: 236 40% 40%;
+
+  /* Accent: Integra Light Blue #4F8FE2 */
+  --accent: 215 72% 60%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 212 40% 90%;
+  --input: 212 40% 90%;
+  --ring: 215 72% 60%;
+
+  --radius: 0.3rem;
+
+  /* Custom Fonts */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Integra Brand Colors */
+  --integra-dark-blue: 236 93% 17%;
+  --integra-light-blue: 215 72% 60%;
+  --integra-pale-blue: 212 83% 80%;
+  --integra-purple: 260 56% 37%;
+  --integra-yellow: 42 97% 54%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold tracking-tight;
+  }
+}
+
+/* Custom Utilities for Premium Feel */
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(236 93% 17% / 0.95), hsl(236 93% 10% / 0.98));
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, hsl(215 72% 60%), hsl(236 93% 17%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
