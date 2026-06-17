@@ -7,12 +7,9 @@ execSync("npx vite build", { stdio: "inherit" });
 // Bundle the Express server
 await build({
   entryPoints: ["server/index.ts"],
-  outfile: "dist/index.mjs",
+  outfile: "dist/index.cjs",
   platform: "node",
-  format: "esm",
+  format: "cjs",
   bundle: true,
   packages: "external",
-  banner: {
-    js: "import { createRequire } from 'module'; const require = createRequire(import.meta.url);",
-  },
 });
